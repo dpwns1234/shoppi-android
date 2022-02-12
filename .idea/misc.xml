@@ -3,7 +3,9 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/activity_main.xml" value="0.12132725430597771" />
+        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/drawable/ic_gnb_back.xml" value="0.1" />
+        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/activity_product_detail.xml" value="0.264" />
       </map>
     </option>
   </component>
