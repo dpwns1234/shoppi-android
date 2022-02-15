@@ -14,7 +14,6 @@ class ProductDetailFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         return inflater.inflate(R.layout.fragment_product_detail, container, false)
-
     }
 
 }
