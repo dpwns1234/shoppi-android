@@ -12,6 +12,8 @@
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/drawable/selector_home_icon.xml" value="0.1" />
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/activity_main.xml" value="0.2" />
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/activity_product_detail.xml" value="0.264" />
+        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/fragment_cart.xml" value="0.4" />
+        <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/fragment_category.xml" value="0.1" />
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/fragment_home.xml" value="0.1" />
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/layout/fragment_product_detail.xml" value="0.25364583333333335" />
         <entry key="..\:/Users/Public/Android/shoppi-android/app/src/main/res/menu/navigation_main_menu.xml" value="0.1" />
