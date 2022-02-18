@@ -1,17 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 <!-- Text Style -->
-    <style name="TextSubtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
-        <item name="android:textColor">@color/shoppi_black_01</item>
-    </style>
+    <style name="TextHeadLin5.Black02" parent="TextAppearance.MaterialComponents.Headline5">
+        <item name="android:textColor">@color/shoppi_black_02</item>
 
-    <style name="TextSubtitle1.White">
-        <item name="android:textColor">@color/shoppi_white</item>
     </style>
-
-    <style name="TextSubtitle1.White.Bold">
+    <style name="TextHeadLin5.Black02.Bold" parent="TextAppearance.MaterialComponents.Headline5">
         <item name="android:textStyle">bold</item>
-        <item name="android:textColor">@color/shoppi_white</item>
     </style>
 
     <style name="TextMedium" parent="TextAppearance.AppCompat.Medium">
@@ -23,6 +18,17 @@
     <style name="TextMedium.Purple.Bold">
         <item name="android:textColor">@color/shoppi_purple</item>
         <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextSubtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+        <item name="android:textColor">@color/shoppi_black_01</item>
+    </style>
+    <style name="TextSubtitle1.White">
+        <item name="android:textColor">@color/shoppi_white</item>
+    </style>
+    <style name="TextSubtitle1.White.Bold">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/shoppi_white</item>
     </style>
 
     <style name="TextSubtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
