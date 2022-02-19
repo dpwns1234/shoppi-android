@@ -69,7 +69,7 @@
         app:layout_constraintTop_toTopOf="@id/bg_banner_product_detail" />
 
     <TextView
-        android:id="@+id/tv_banner_brand_label"
+        android:id="@+id/tv_banner_detail_brand_label"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
@@ -89,9 +89,9 @@
         android:layout_marginTop="1dp"
         android:ellipsize="end"
         android:maxLines="1"
-        app:layout_constraintEnd_toEndOf="@id/tv_banner_brand_label"
-        app:layout_constraintStart_toStartOf="@id/tv_banner_brand_label"
-        app:layout_constraintTop_toBottomOf="@id/tv_banner_brand_label"
+        app:layout_constraintEnd_toEndOf="@id/tv_banner_detail_brand_label"
+        app:layout_constraintStart_toStartOf="@id/tv_banner_detail_brand_label"
+        app:layout_constraintTop_toBottomOf="@id/tv_banner_detail_brand_label"
         tools:text="캐시미어 100% 터틀넥 스웨터" />
 
     <TextView
