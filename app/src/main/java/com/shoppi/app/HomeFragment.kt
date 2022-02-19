@@ -54,6 +54,15 @@ class HomeFragment : Fragment() {
             }
         }
 
-
+        val status: Int? = null
+        fun checkNullLet() {
+            status?.let {
+                println("score = ${it}")
+            }
+            val str = status?.let { status.toString() }
+        }
     }
+
+
+
 }
