@@ -11,18 +11,21 @@ import androidx.recyclerview.widget.RecyclerView
 
 class HomeBannerAdapter : ListAdapter<Banner, HomeBannerAdapter.HomeBannerViewHolder>(BannerDiffCallback()) {
 
+    // ViewHolder가 생성되며 실행
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): HomeBannerViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_home_banner, parent, false)
         return HomeBannerViewHolder(view)
     }
 
+    // onCreateViewHolder가 실행되어 ViewHolder가 잘 생성이 되었다면 그 view holder가 인자로 전달된다.
     override fun onBindViewHolder(holder: HomeBannerViewHolder, position: Int) {
         holder.bind(getItem(position))
-
     }
 
+    // Home Banner에서 inflate 시킬 view를 인자로 받음
     class HomeBannerViewHolder(view: View) : RecyclerView.ViewHolder(view) {
 
+        // banner에 들어갈 모든 Views
         private val bannerImageView = view.findViewById<ImageView>(R.id.iv_banner_image)
         private val bannerBadgeTextView = view.findViewById<TextView>(R.id.tv_banner_badge)
         private val bannerTitleTextView = view.findViewById<TextView>(R.id.tv_banner_title)
