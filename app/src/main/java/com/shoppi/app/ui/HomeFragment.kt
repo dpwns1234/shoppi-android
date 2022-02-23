@@ -1,4 +1,4 @@
-package com.shoppi.app
+package com.shoppi.app.ui
 
 import android.os.Bundle
 import android.util.Log
@@ -8,13 +8,17 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.Observer
 import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.tabs.TabLayout
+import com.google.android.material.tabs.TabLayoutMediator
 import com.google.gson.Gson
-import org.json.JSONObject
+import com.shoppi.app.*
 
 class HomeFragment : Fragment() {
 
+    private val viewModel: HomeViewModel by viewModels()
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -42,24 +46,31 @@ class HomeFragment : Fragment() {
             val homeData = gson.fromJson(homeJsonString, HomeData::class.java)
 
 
-
-            titleText.text = homeData.title.text
-            GlideApp.with(this)
-                .load(homeData.title.iconUrl)
-                .into(titleIcon)
-
-
-            viewpager.adapter = HomeBannerAdapter().apply {
-                submitList(homeData.topBanners)
+            viewModel.title.observe(viewLifecycleOwner) { title ->
+                titleText.text = title.text
+                GlideApp.with(this)
+                    .load(title.iconUrl)
+                    .into(titleIcon)
             }
-        }
 
-        val status: Int? = null
-        fun checkNullLet() {
-            status?.let {
-                println("score = ${it}")
+            viewModel.topBanners.observe(viewLifecycleOwner) { banners ->
+                viewpager.adapter = HomeBannerAdapter().apply {
+                    submitList(banners)
+                }
             }
-            val str = status?.let { status.toString() }
+
+            val pageWidth = resources.getDimension(R.dimen.viewpager_item_width)
+            val pageMargin = resources.getDimension(R.dimen.viewpager_item_margin)
+            val screenWidth = resources.displayMetrics.widthPixels
+            val offset = screenWidth - pageWidth - pageMargin
+
+            viewpager.offscreenPageLimit = 1
+            viewpager.setPageTransformer { page, position ->
+                page.translationX = position * -offset
+            }
+            TabLayoutMediator(viewpagerIndicator, viewpager) { tab, position ->
+
+            }.attach()
         }
     }
 
