@@ -10,7 +10,7 @@
         android:label="CartFragment" />
     <fragment
         android:id="@+id/navigation_home"
-        android:name="com.shoppi.app.ui.HomeFragment"
+        android:name="com.shoppi.app.ui.home.HomeFragment"
         android:label="HomeFragment" >
         <action
             android:id="@+id/action_home_to_product_detail"
