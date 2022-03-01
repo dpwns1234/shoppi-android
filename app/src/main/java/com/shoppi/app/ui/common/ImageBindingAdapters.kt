@@ -1,6 +1,5 @@
 package com.shoppi.app.ui.common
 
-import android.util.Log
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.shoppi.app.GlideApp
