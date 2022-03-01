@@ -13,7 +13,7 @@ interface ApiClient {
     suspend fun getCategories(): List<Category>
 
     companion object {
-        private const val baseUrl = "https://shoppi-7ce72-default-rtdb.asia-southeast1.firebasedatabase.app/categories"
+        private const val baseUrl = "https://shoppi-7ce72-default-rtdb.asia-southeast1.firebasedatabase.app"
 
         fun create(): ApiClient {
             val logger = HttpLoggingInterceptor().apply {

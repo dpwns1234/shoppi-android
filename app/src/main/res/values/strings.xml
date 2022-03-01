@@ -8,4 +8,5 @@
     <string name="label_cart_icon">장바구니</string>
     <string name="unit_discount_rate">%d%%</string>
     <string name="unit_discount_price">%s원</string>
+    <string name="label_category_new">NEW</string>
 </resources>
