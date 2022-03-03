@@ -10,8 +10,8 @@ import com.shoppi.app.model.Category
 
 class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(CategoryDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
-        val binding =
-            ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        // 레이아웃을 객체로 만든다.(= inflate)
+        val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
         return CategoryViewHolder(binding)
     }
 
@@ -19,9 +19,11 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder
         holder.bind(getItem(position))
     }
 
+    // binding 객체를 사용하기 위해서 프로퍼티로 설정한다.
     class CategoryViewHolder(private val binding: ItemCategoryBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(category: Category) {
             binding.category = category
+            // 강제로 바로 데이터 바인딩을 실시
             binding.executePendingBindings()
         }
     }

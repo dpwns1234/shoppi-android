@@ -1,13 +1,13 @@
 {
   "categories": [
     {
-      "category_id": "fashion-female",
+      "category_id": "fashion_female",
       "label": "여성패션",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/52391722/156128264-5d6a6914-fd66-42f5-99dc-ba9aa0730d1e.jpg",
       "updated": false
     },
     {
-      "category_id": "fashion-male",
+      "category_id": "fashion_male",
       "label": "남성패션",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/52391722/156128247-e67e9ecd-f02e-4a7b-87d1-2907e457ba45.jpg",
       "updated": false
@@ -49,7 +49,7 @@
       "updated": false
     },
     {
-      "category_id": "fancy-goods",
+      "category_id": "fancy_goods",
       "label": "잡화",
       "thumbnail_image_url": "https://user-images.githubusercontent.com/52391722/156128255-68d36e7b-524a-4fd3-8267-2aac5ab26c6e.jpg",
       "updated": false

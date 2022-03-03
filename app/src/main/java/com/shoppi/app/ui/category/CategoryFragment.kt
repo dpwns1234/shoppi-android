@@ -29,9 +29,12 @@ class CategoryFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val categoryAdapter = CategoryAdapter()
 
+        // 문법상 RecyclerView는 adapter를 설정해줘야 한다.
         binding.rvCategoryList.adapter = categoryAdapter
 
+        // item이 변경될때마다(= observe)
         viewModel.items.observe(viewLifecycleOwner) {
+            // adapter에 데이터를 넣어준다.
             categoryAdapter.submitList(it)
         }
     }
