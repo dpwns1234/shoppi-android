@@ -8,7 +8,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.shoppi.app.databinding.ItemCategoryBinding
 import com.shoppi.app.model.Category
 
-class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(CategoryDiffUtil()) {
+class CategoryAdapter(private val viewModel: CategoryViewModel) : ListAdapter<Category, CategoryAdapter.CategoryViewHolder>(CategoryDiffUtil()) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CategoryViewHolder {
         // 레이아웃을 객체로 만든다.(= inflate)
         val binding = ItemCategoryBinding.inflate(LayoutInflater.from(parent.context), parent, false)
@@ -20,8 +20,9 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder
     }
 
     // binding 객체를 사용하기 위해서 프로퍼티로 설정한다.
-    class CategoryViewHolder(private val binding: ItemCategoryBinding): RecyclerView.ViewHolder(binding.root) {
+    inner class CategoryViewHolder(private val binding: ItemCategoryBinding): RecyclerView.ViewHolder(binding.root) {
         fun bind(category: Category) {
+            binding.viewModel = viewModel
             binding.category = category
             // 강제로 바로 데이터 바인딩을 실시
             binding.executePendingBindings()
@@ -32,7 +33,7 @@ class CategoryAdapter : ListAdapter<Category, CategoryAdapter.CategoryViewHolder
 
 class CategoryDiffUtil : DiffUtil.ItemCallback<Category>() {
     override fun areItemsTheSame(oldItem: Category, newItem: Category): Boolean {
-        return oldItem.category == newItem.category
+        return oldItem.categoryId == newItem.categoryId
     }
 
     override fun areContentsTheSame(oldItem: Category, newItem: Category): Boolean {
