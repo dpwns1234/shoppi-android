@@ -8,6 +8,7 @@ import androidx.core.os.bundleOf
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.ConcatAdapter
 import com.shoppi.app.R
 import com.shoppi.app.common.KEY_CATEGORY_ID
 import com.shoppi.app.common.KEY_CATEGORY_LABEL
@@ -27,12 +28,21 @@ class CategoryDetailFragment: Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
         binding.lifecycleOwner = viewLifecycleOwner
+        setToolbar()
+        setListAdapter()
+    }
 
-        val categoryId = requireArguments().getString(KEY_CATEGORY_ID)
+    private fun setToolbar() {
         val categoryLabel = requireArguments().getString(KEY_CATEGORY_LABEL)
-
         binding.toolbarCategoryDetail.title = categoryLabel
+    }
+
+    private fun setListAdapter() {
+        val titleAdapter = CategorySectionTitleAdapter()
+        val promotionAdapter = CategoryPromotionAdapter()
+        binding.rvCategoryDetail.adapter = ConcatAdapter(titleAdapter, promotionAdapter)
     }
 
 }
