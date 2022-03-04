@@ -6,6 +6,7 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.shoppi.app.model.Category
 import com.shoppi.app.repository.category.CategoryRepository
+import com.shoppi.app.ui.common.Event
 import kotlinx.coroutines.launch
 
 class CategoryViewModel(private val categoryRepository: CategoryRepository): ViewModel() {
@@ -15,8 +16,8 @@ class CategoryViewModel(private val categoryRepository: CategoryRepository): Vie
 
     // 선택되었는지의 여부를 관리?? 이게 맞아? 그럼 선택 되었다 or 안되었다 이것만 관리하는건가? <- 96. 10분
     // 카테고리 디테일에서 선택된 Category를 '저장', '관리'
-    private val _openCategoryEvent = MutableLiveData<Category>()
-    val openCategoryEvent: LiveData<Category> = _openCategoryEvent
+    private val _openCategoryEvent = MutableLiveData<Event<Category>>()
+    val openCategoryEvent: LiveData<Event<Category>> = _openCategoryEvent
 
     init {
         loadCategory()
@@ -24,11 +25,12 @@ class CategoryViewModel(private val categoryRepository: CategoryRepository): Vie
 
     // 선택된 카테고리에 데이터를 저장
     fun openCategoryDetail(category: Category) {
-        _openCategoryEvent.value = category
+        _openCategoryEvent.value = Event(category)
     }
 
     private fun loadCategory() {
         // TODO repository에 데이터 요청
+        // 코루틴 사용 아마?
         viewModelScope.launch {
             val categories = categoryRepository.getCategories()
             _items.value = categories

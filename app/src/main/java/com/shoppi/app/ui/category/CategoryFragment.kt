@@ -11,7 +11,11 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
 import com.shoppi.app.R
+import com.shoppi.app.common.KEY_CATEGORY_ID
+import com.shoppi.app.common.KEY_CATEGORY_LABEL
 import com.shoppi.app.databinding.FragmentCategoryBinding
+import com.shoppi.app.model.Category
+import com.shoppi.app.ui.common.EventObserver
 import com.shoppi.app.ui.common.ViewModelFactory
 
 class CategoryFragment:Fragment() {
@@ -34,16 +38,17 @@ class CategoryFragment:Fragment() {
         // 문법상 RecyclerView는 adapter를 설정해줘야 한다.
         binding.rvCategoryList.adapter = categoryAdapter
 
-        // item이 변경될때마다(= observe)
+        // item이 변경될때마다(= observe) viewModel에서 데이터를 가져와서
         viewModel.items.observe(viewLifecycleOwner) {
             // adapter에 데이터를 넣어준다.
             categoryAdapter.submitList(it)
         }
 
         // openCategoryEvent의 상태가 변경될 때 실행된다.(= 특정 카테고리가 클릭(onClick)되었을 때)
-        viewModel.openCategoryEvent.observe(viewLifecycleOwner) {
+        viewModel.openCategoryEvent.observe(viewLifecycleOwner, EventObserver {
             openCategoryDetail(it.categoryId, it.label)
-        }
+        })
+
     }
 
     // 특정 카테고리 디테일이 선택되었을 때, 실행된다.
@@ -51,8 +56,8 @@ class CategoryFragment:Fragment() {
 
         findNavController().navigate(R.id.action_category_to_category_detail, bundleOf(
             // "key" to "value"
-            "category_id" to categoryId,
-            "category_label" to categoryLabel
+            KEY_CATEGORY_ID to categoryId,
+            KEY_CATEGORY_LABEL to categoryLabel
         )
         )
     }

@@ -9,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
 import androidx.navigation.fragment.findNavController
 import com.shoppi.app.R
+import com.shoppi.app.common.KEY_CATEGORY_ID
+import com.shoppi.app.common.KEY_CATEGORY_LABEL
 import com.shoppi.app.databinding.FragmentCategoryDetailBinding
 
 class CategoryDetailFragment: Fragment() {
@@ -26,6 +28,11 @@ class CategoryDetailFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.lifecycleOwner = viewLifecycleOwner
+
+        val categoryId = requireArguments().getString(KEY_CATEGORY_ID)
+        val categoryLabel = requireArguments().getString(KEY_CATEGORY_LABEL)
+
+        binding.toolbarCategoryDetail.title = categoryLabel
     }
 
 }
