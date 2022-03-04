@@ -15,8 +15,7 @@
 
         <com.google.android.material.appbar.AppBarLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/shoppi_white">
+            android:layout_height="wrap_content">
 
 
             <androidx.appcompat.widget.Toolbar
@@ -38,7 +37,7 @@
                     android:paddingEnd="16dp"
                     android:paddingBottom="24dp"
                     android:text="@{title.text}"
-                    tools:text="titleText" />
+                    tools:text="YJ님,\n이 상품은 어떤가요?" />
 
 
                 <ImageView
