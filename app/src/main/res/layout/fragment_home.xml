@@ -27,7 +27,7 @@
 
                 <TextView
                     android:id="@+id/title_text"
-                    style="@style/TextHeadLin5.Black02.Bold"
+                    style="@style/TextHeadLine5.Black02.Bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginEnd="72dp"

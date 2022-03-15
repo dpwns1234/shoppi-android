@@ -19,7 +19,7 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:title="@string/label_category"
-            app:titleTextAppearance="@style/TextHeadLin5.Black02.Bold" />
+            app:titleTextAppearance="@style/TextHeadLine5.Black02.Bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rv_category_list"
